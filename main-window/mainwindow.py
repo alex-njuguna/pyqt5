@@ -51,8 +51,16 @@ class MainWindow(QMainWindow):
         # working with status bar
         self.setStatusBar(QStatusBar(self))
 
+        # add a button
+        button1 = QPushButton('Button 1')
+        button1.clicked.connect(self.button1_clicked)
+        self.setCentralWidget(button1)
+
     def quit_app(self):
         self.app.quit()
 
     def toolbar_button_click(self):
         self.statusBar().showMessage('message from my app', 3000)
+
+    def button1_clicked(self):
+        print('button 1 clicked')
