@@ -1,6 +1,7 @@
-from PySide6.QtWidgets import QMainWindow, QToolBar
+import os
+from PySide6.QtWidgets import QMainWindow, QToolBar, QPushButton
 from PySide6.QtCore import QSize
-from PySide6.QtGui import QAction
+from PySide6.QtGui import QAction, QIcon
 
 class MainWindow(QMainWindow):
     def __init__(self, app):
@@ -37,6 +38,15 @@ class MainWindow(QMainWindow):
         action1.setStatusTip('Some message here')
         action1.triggered.connect(self.toolbar_button_click)
         tool_bar.addAction(action1)
+
+        icon_path = os.path.join('main-window', 'start.png')
+        action2 = QAction(QIcon(icon_path), 'Some other action', self)
+        action2.setStatusTip('some other action message here')
+        action2.triggered.connect(self.toolbar_button_click)
+        tool_bar.addAction(action2)
+
+        tool_bar.addSeparator()
+        tool_bar.addWidget(QPushButton('Click here'))
 
     def quit_app(self):
         self.app.quit()
