@@ -1,5 +1,5 @@
 import os
-from PySide6.QtWidgets import QMainWindow, QToolBar, QPushButton
+from PySide6.QtWidgets import QMainWindow, QToolBar, QPushButton, QStatusBar
 from PySide6.QtCore import QSize
 from PySide6.QtGui import QAction, QIcon
 
@@ -24,7 +24,7 @@ class MainWindow(QMainWindow):
         edit_menu.addAction('Redo')
 
         menu_bar.addMenu('Window')
-        menu_bar.addMenu('&Setting')
+        menu_bar.addMenu('Setting')
         menu_bar.addMenu('&Help')
 
         # working with toolbars
@@ -48,8 +48,11 @@ class MainWindow(QMainWindow):
         tool_bar.addSeparator()
         tool_bar.addWidget(QPushButton('Click here'))
 
+        # working with status bar
+        self.setStatusBar(QStatusBar(self))
+
     def quit_app(self):
         self.app.quit()
 
     def toolbar_button_click(self):
-        print('Tool bar button clicked')
+        self.statusBar().showMessage('message from my app', 3000)
