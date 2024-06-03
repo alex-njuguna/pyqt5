@@ -54,7 +54,12 @@ class Widget(QWidget):
             print('user cancelled')
 
     def button_clicked_critical(self):
-        print('critical')
+        ret = QMessageBox.critical(self, 'message title', 'crirtical message!', QMessageBox.Ok | QMessageBox.Cancel)
+
+        if ret == QMessageBox.Ok:
+            print('user clicked ok!')
+        else:
+            print('user cancelled')
 
     def button_clicked_question(self):
         print('question')
