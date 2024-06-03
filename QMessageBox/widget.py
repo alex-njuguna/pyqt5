@@ -62,15 +62,35 @@ class Widget(QWidget):
             print('user cancelled')
 
     def button_clicked_question(self):
-        print('question')
+        ret = QMessageBox.question(self, 'message title', 'message question?', QMessageBox.Ok | QMessageBox.Cancel)
+
+        if ret == QMessageBox.Ok:
+            print('user clicked ok!')
+        else:
+            print('user cancelled')
 
     def button_clicked_information(self):
-        print('information')
+        ret = QMessageBox.information(self, 'message title', 'message information', QMessageBox.Ok)
+
+        if ret == QMessageBox.Ok:
+            print('user clicked ok!')
+        else:
+            print('user cancelled')
 
     def button_clicked_warning(self):
-        print('warning')
+        ret = QMessageBox.warning(self, 'message title', 'message warning', QMessageBox.Ok)
+
+        if ret == QMessageBox.Ok:
+            print('user clicked ok!')
+        else:
+            print('user cancelled')
 
     def button_clicked_about(self):
-        print('about')
+        ret = QMessageBox.about(self, 'message title', 'message about')
+
+        if ret == QMessageBox.Ok:
+            print('user clicked ok!')
+        else:
+            print('user cancelled')
 
 
