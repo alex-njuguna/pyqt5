@@ -36,7 +36,22 @@ class Widget(QWidget):
         self.setLayout(layout)
 
     def button_clicked_hard(self):
-        print('Hard')
+        # setting up the message box he hard way
+        message = QMessageBox()
+        message.setMinimumSize(700, 200)
+        message.setWindowTitle('message box')
+        message.setText('sth happened')
+        message.setInformativeText('sth has happened during...')
+        message.setIcon(QMessageBox.Critical)
+        message.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+        message.setDefaultButton(QMessageBox.Ok)
+
+        # dispay the message box
+        ret = message.exec()
+        if ret == QMessageBox.Ok:
+            print('user clicked ok!')
+        else:
+            print('user cancelled')
 
     def button_clicked_critical(self):
         print('critical')
