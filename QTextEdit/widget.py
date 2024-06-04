@@ -54,4 +54,4 @@ class Widget(QWidget):
         self.text_edit.setPlainText('This is plain text with no formatting')
 
     def set_html(self):
-        pass
+        self.text_edit.setHtml("<b>This text is bold</b> and has <font color='red'>red color</font>.")
