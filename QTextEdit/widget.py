@@ -32,3 +32,26 @@ class Widget(QWidget):
         clear_button = QPushButton('clear')
         clear_button.clicked.connect(self.text_edit.clear)
 
+        # set buttons layout
+        h_layout = QHBoxLayout()
+        h_layout.addWidget(copy_button)
+        h_layout.addWidget(cut_button)
+        h_layout.addWidget(paste_button)
+        h_layout.addWidget(undo_button)
+        h_layout.addWidget(redo_button)
+        h_layout.addWidget(set_plain_text_button)
+        h_layout.addWidget(set_html_button)
+        h_layout.addWidget(clear_button)
+
+        # set app layout
+        v_layout = QVBoxLayout()
+        v_layout.addLayout(h_layout)
+        v_layout.addWidget(self.text_edit)
+
+        self.setLayout(v_layout)
+
+    def set_plain_text(self):
+        self.text_edit.setPlainText('This is plain text with no formatting')
+
+    def set_html(self):
+        pass
