@@ -11,3 +11,14 @@ class Widget(QWidget):
 
         button = QPushButton('Grab data')
         self.text_holder_label = QLabel('I AM HERE')
+
+        h_layout = QHBoxLayout()
+        h_layout.addWidget(label)
+        h_layout.addWidget(self.line_edit)
+
+        layout = QVBoxLayout()
+        layout.addLayout(h_layout)
+        layout.addWidget(button)
+        layout.addWidget(self.text_holder_label)
+
+        self.setLayout(layout)
