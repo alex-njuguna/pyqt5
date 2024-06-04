@@ -9,6 +9,8 @@ class Widget(QWidget):
         label = QLabel('Fullname: ')
         self.line_edit = QLineEdit()
 
+        self.line_edit.textChanged.connect(self.text_changed)
+
         button = QPushButton('Grab data')
         button.clicked.connect(self.button_clicked)
         self.text_holder_label = QLabel('I AM HERE')
@@ -26,4 +28,7 @@ class Widget(QWidget):
 
     def button_clicked(self):
         print(f'fullname: {self.line_edit.text()}')
+        self.text_holder_label.setText(self.line_edit.text())
+
+    def text_changed(self):
         self.text_holder_label.setText(self.line_edit.text())
