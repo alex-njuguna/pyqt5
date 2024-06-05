@@ -18,8 +18,14 @@ class Widget(QWidget):
         button_3 = QPushButton('button 3')
 
         h_layout_2 = QHBoxLayout()
-        h_layout_2.addWidget(button_1)
-        h_layout_2.addWidget(button_2)
-        h_layout_2.addWidget(button_3)
+        h_layout_2.addWidget(button_1, 2)
+        h_layout_2.addWidget(button_2, 1)
+        h_layout_2.addWidget(button_3, 1)
+
+        default_layout = QVBoxLayout()
+        default_layout.addLayout(h_layout_1)
+        default_layout.addLayout(h_layout_2)
+
+        self.setLayout(default_layout)
 
 
