@@ -11,3 +11,8 @@ class Widget(QWidget):
         label = QLabel()
         image_path = os.path.join('QLabel-image', 'images/minions.jpg')
         label.setPixmap(QPixmap(image_path))
+
+        layout = QVBoxLayout()
+        layout.addWidget(label)
+
+        self.setLayout(layout)
