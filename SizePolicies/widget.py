@@ -12,3 +12,14 @@ class Widget(QWidget):
         h_layout_1 = QHBoxLayout()
         h_layout_1.addWidget(label)
         h_layout_1.addWidget(line_edit)
+
+        button_1 = QPushButton('button 1')
+        button_2 = QPushButton('button 2')
+        button_3 = QPushButton('button 3')
+
+        h_layout_2 = QHBoxLayout()
+        h_layout_2.addWidget(button_1)
+        h_layout_2.addWidget(button_2)
+        h_layout_2.addWidget(button_3)
+
+
