@@ -39,7 +39,7 @@ class MainWindow(QMainWindow):
         action1.triggered.connect(self.toolbar_button_click)
         tool_bar.addAction(action1)
 
-        icon_path = os.path.join('main-window', 'start.png')
+        icon_path = os.path.join('QMainWindow', 'start.png')
         action2 = QAction(QIcon(icon_path), 'Some other action', self)
         action2.setStatusTip('some other action message here')
         action2.triggered.connect(self.toolbar_button_click)
