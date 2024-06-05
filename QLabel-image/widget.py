@@ -7,9 +7,10 @@ class Widget(QWidget):
         super().__init__()
 
         self.setWindowTitle('Label as image')
+        self.setMaximumWidth(700)
 
         label = QLabel()
-        image_path = os.path.join('QLabel-image', 'images/minions.jpg')
+        image_path = 'images/minions.webp'
         label.setPixmap(QPixmap(image_path))
 
         layout = QVBoxLayout()
