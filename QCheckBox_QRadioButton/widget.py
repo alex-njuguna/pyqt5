@@ -46,12 +46,28 @@ class Widget(QWidget):
         drinks.setLayout(drinks_layout)
 
 
+        # answers radio buttons
+        answers = QGroupBox('Pick your answer')
+        answer_a = QRadioButton('A')
+        answer_b = QRadioButton('B')
+        answer_c = QRadioButton('C')
+        answer_a.setChecked(True)
+
+        answer_layout = QVBoxLayout()
+        answer_layout.addWidget(answer_a)
+        answer_layout.addWidget(answer_b)
+        answer_layout.addWidget(answer_c)
+        answers.setLayout(answer_layout)
+
+
         h_layout = QHBoxLayout()
         h_layout.addWidget(os)
         h_layout.addWidget(drinks)
 
+
         layout = QVBoxLayout()
         layout.addLayout(h_layout)
+        layout.addWidget(answers)
         self.setLayout(layout)
 
 
