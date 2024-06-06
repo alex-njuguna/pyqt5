@@ -37,6 +37,7 @@ class Widget(QWidget):
         exclusive_button_group.addButton(beer)
         exclusive_button_group.addButton(tea)
         exclusive_button_group.addButton(juice)
+        exclusive_button_group.setExclusive(True)
 
         drinks_layout = QVBoxLayout()
         drinks_layout.addWidget(beer)
