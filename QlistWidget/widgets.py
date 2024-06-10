@@ -12,3 +12,8 @@ class Widget(QWidget):
 
         self.list_widget.addItem('one')
         self.list_widget.addItems(['two', 'three'])
+
+        layout = QVBoxLayout()
+        layout.addWidget(self.list_widget)
+
+        self.setLayout(layout)
