@@ -7,4 +7,8 @@ class Widget(QWidget):
 
         self.setWindowTitle('QListWidget')
 
-       
+        self.list_widget = QListWidget(self)
+        self.list_widget.setSelectionMode(QAbstractItemView.MultiSelection)
+
+        self.list_widget.addItem('one')
+        self.list_widget.addItems(['two', 'three'])
